@@ -22,11 +22,11 @@ public class KSBCampusServiceClientTest
 		CampusService svc = client.getCampusService( new URL( "http://localhost:8080/kc-dev/remoting/soap/location/v2_0/campusService?wsdl" ) );
 		Campuses campuses = svc.findAllCampuses();
 
-		assertEquals( 12, campuses.getCampus().size() );
+		assertEquals( 7, campuses.getCampus().size() );
 
 		for( CampusType campus : campuses.getCampus() )
 		{
-			System.out.printf( "%s : %s : %s \n", campus.getCode(), campus.getShortName(), campus.getName() );
+			System.out.printf( "%s : %s : %s \n", campus.getCode(), campus.getShortName(), campus.getCode() );
 		}
 	}
 }
